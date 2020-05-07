@@ -90,7 +90,7 @@ export default function Calendar(props) {
     setMonth(newmonth);
   }
   function changeTo(theChange) {
-    if ([0, 0] === theChange) {
+    if (theChange[0] === 0 && theChange[1] === 0) {
       changeToToday();
     } else {
       changeToMonth(theChange);
@@ -151,3 +151,4 @@ export default function Calendar(props) {
     </div>
   );
 }
+
