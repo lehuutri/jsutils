@@ -1,0 +1,114 @@
+body {
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.topBlock {
+  float: left;
+  background: #222831;
+  margin: 5px;
+}
+
+.topBlock .title {
+  background: #393e46;
+  color: #eeeeee;
+  text-align: center;
+}
+
+/* Clock */
+.Clock {
+  background: #393e46;
+  margin: 10px;
+  padding: 10px;
+}
+.Clock .text {
+  color: #eeeeee;
+  text-align: center;
+}
+.Clock .time {
+  color: #00adb5;
+  text-align: right;
+  font-size: 22px;
+}
+
+/* Converter */
+.TimeInput {
+  background: #393e46;
+  margin: 10px;
+  padding: 10px;
+}
+.TimeInput .text {
+  color: #eeeeee;
+  text-align: center;
+}
+.TimeInput .hour {
+  color: #00adb5;
+  font-size: 17px;
+}
+
+/* Calendar */
+.Calendar {
+  background: #393e46;
+  margin: 10px;
+  padding: 10px;
+}
+
+.Calendar .header {
+  background: #393e46;
+  border-style: hidden hidden solid hidden;
+  border-width: 1px;
+}
+
+.Calendar .header .control {
+  display: flex;
+  color: #00adb5;
+  font-weight: bold;
+  justify-content: space-around;
+}
+
+.Calendar .header .days {
+  display: flex;
+  border: none;
+}
+.Calendar .header .day {
+  padding: 5px;
+  margin: 3px;
+  width: 35px;
+  text-align: center;
+}
+
+.Calendar .header .highlight {
+  color: #b53000;
+}
+.Calendar .header .normal {
+  color: #00adb5;
+}
+
+.Calendar .body {
+  display: flex;
+  flex-direction: column;
+}
+
+.Calendar .body .week {
+  display: flex;
+}
+
+.Calendar .body .day {
+  padding: 5px;
+  margin: 3px;
+  width: 35px;
+  color: #eeeeee;
+  text-align: center;
+}
+
+.Calendar .body .low {
+  color: gray;
+}
+
+.Calendar .body .high {
+  background: #222831;
+  border-radius: 100%;
+}
