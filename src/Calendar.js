@@ -20,13 +20,16 @@ function CalendarHeader(props) {
   return (
     <div className="header">
       <div className="control">
+        {props.title}
         <button type="button" onClick={() => props.onClick([-1, 0])}>
           &#171;
         </button>
         <button type="button" onClick={() => props.onClick([0, -1])}>
           &#8249;
         </button>
-        {props.title}
+        <button type="button" onClick={() => props.onClick([0, 0])}>
+          &#10687;
+        </button>
         <button type="button" onClick={() => props.onClick([0, 1])}>
           &#8250;
         </button>
@@ -68,7 +71,12 @@ export default function Calendar(props) {
     ];
     return months[month];
   }
-  function changeTo(theChange) {
+  function changeToToday() {
+    const current = new Date();
+    setYear(current.getFullYear());
+    setMonth(current.getMonth());
+  }
+  function changeToMonth(theChange) {
     let [newyear, newmonth] = [year + theChange[0], month + theChange[1]];
     if (newmonth < 0) {
       newmonth = 11;
@@ -80,6 +88,13 @@ export default function Calendar(props) {
     }
     setYear(newyear);
     setMonth(newmonth);
+  }
+  function changeTo(theChange) {
+    if ([0, 0] === theChange) {
+      changeToToday();
+    } else {
+      changeToMonth(theChange);
+    }
   }
   function renderBody(year, month) {
     const firstDay = new Date(year, month, 1);

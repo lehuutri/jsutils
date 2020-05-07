@@ -66,7 +66,7 @@ body {
   display: flex;
   color: #00adb5;
   font-weight: bold;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .Calendar .header .days {
