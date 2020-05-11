@@ -2,6 +2,7 @@
   "name": "webutil",
   "version": "1.0.0",
   "description": "some small utils on web page",
+  "license": "MIT",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
