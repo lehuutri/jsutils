@@ -117,8 +117,8 @@ export default function Calendar(props) {
     }
     for (let d = 1; d <= thisEOM; d++) {
       let cl = "day";
-      if (isToday(d)) cl += "high";
-      if (isWeekend(d)) cl += "low";
+      if (isToday(d)) cl += " high";
+      if (isWeekend(d)) cl += " low";
 
       days.push(
         <span className={cl} key={days.length}>
