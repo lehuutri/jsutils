@@ -46,6 +46,11 @@ export default function Calendar(props) {
   const [year, setYear] = useState(current.getFullYear());
   const [month, setMonth] = useState(current.getMonth());
 
+  function isWeekend(d) {
+    const theday = new Date(year, month, d);
+    const thedow = theday.getDay();
+    return (thedow === 6 || thedow === 7) ? true : false;
+  }
   function isToday(d) {
     const current = new Date();
     return year === current.getFullYear() &&
@@ -111,7 +116,10 @@ export default function Calendar(props) {
       );
     }
     for (let d = 1; d <= thisEOM; d++) {
-      const cl = isToday(d) ? "day high" : "day";
+      let cl = "day";
+      if (isToday(d)) cl += "high";
+      if (isWeekend(d)) cl += "low";
+
       days.push(
         <span className={cl} key={days.length}>
           {d}
