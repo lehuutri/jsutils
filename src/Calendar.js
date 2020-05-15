@@ -49,7 +49,7 @@ export default function Calendar(props) {
   function isWeekend(d) {
     const theday = new Date(year, month, d);
     const thedow = theday.getDay();
-    return (thedow === 6 || thedow === 7) ? true : false;
+    return (thedow === 6 || thedow === 0) ? true : false;
   }
   function isToday(d) {
     const current = new Date();
